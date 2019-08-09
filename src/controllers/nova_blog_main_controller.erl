@@ -4,5 +4,4 @@
         ]).
 
 index(#{method := <<"GET">>} = _Req) ->
-    Result = nova_blog_db:get_entries(),
-    {ok, [{entries, Result}]}.
+    {ok, []}.

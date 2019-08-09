@@ -43,47 +43,43 @@ Released   : 20140207
 	<div id="wrapper2">
 		<div id="welcome" class="container">
 			<div class="title">
-				<h2>Welcome to our website</h2>
+				<h2>Welcome to Nova</h2>
 			</div>
-			<p>This is <strong>Embellished</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+			<p>Nova make it simple to build a fault-tolerant and distributed web application. Ideas is inspired from different web frameworks and implement them with the functionality and stability that Erlang and BEAM have.</p>
 		</div>
 	</div>
 	<div id="wrapper3">
 		<div id="portfolio" class="container">
 		  <div class="title">
-                    {% for entry in entries %}
-                    <h2>{{entry.title}}</h2>
-                    <p>{{entry.text}}</p>
-                    {% endfor %}
 				<h2>Vivamus fermentum nibh</h2>
 				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span> </div>
 			<div class="column1">
 				<div class="box">
 					<span class="icon icon-wrench"></span>
-					<h3>Vestibulum venenatis</h3>
-					<p>Fermentum nibh augue praesent a lacus at urna congue rutrum.</p>
-					<a href="#" class="button button-small">Etiam posuere</a> </div>
+					<h3>BEAM</h3>
+					<p>Runs on a well tested VM that have been proven for the five nines.</p>
+					<a href="#" class="button button-small">Learn more</a> </div>
 			</div>
 			<div class="column2">
 				<div class="box">
 					<span class="icon icon-trophy"></span>
-					<h3>Praesent scelerisque</h3>
-					<p>Vivamus fermentum nibh in augue praesent urna congue rutrum.</p>
-					<a href="#" class="button button-small">Etiam posuere</a> </div>
+					<h3>Cowboy</h3>
+					<p>Built on Cowboy as a web server.</p>
+					<a href="#" class="button button-small">Learn more</a> </div>
 			</div>
 			<div class="column3">
 				<div class="box">
 					<span class="icon icon-key"></span>
 					<h3>Donec dictum metus</h3>
 					<p>Vivamus fermentum nibh in augue praesent urna congue rutrum.</p>
-					<a href="#" class="button button-small">Etiam posuere</a> </div>
+					<a href="#" class="button button-small">Learn more</a> </div>
 			</div>
 			<div class="column4">
 				<div class="box">
 					<span class="icon icon-lock"></span>
 					<h3>Mauris vulputate dolor</h3>
 					<p>Rutrum fermentum nibh in augue praesent urna congue rutrum.</p>
-					<a href="#" class="button button-small">Etiam posuere</a> </div>
+					<a href="#" class="button button-small">Learn more</a> </div>
 			</div>
 		</div>
 	</div>

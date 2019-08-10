@@ -18,28 +18,28 @@
 	<span class="icon icon-wrench"></span>
 	<h3>BEAM</h3>
 	<p>Runs on a well tested VM that have been proven for the five nines.</p>
-	<a href="#" class="button button-small">Etiam posuere</a> </div>
+      </div>
     </div>
     <div class="column2">
       <div class="box">
 	<span class="icon icon-trophy"></span>
 	<h3>Cowboy</h3>
         <p>Built on Cowboy as a web server. Can handle http, http2 and websockets.</p>
-	<a href="#" class="button button-small">Etiam posuere</a> </div>
+      </div>
     </div>
     <div class="column3">
       <div class="box">
 	<span class="icon icon-key"></span>
 	<h3>Erlang</h3>
 	<p>Have been proven language to build applications handling million of users.</p>
-	<a href="#" class="button button-small">Etiam posuere</a> </div>
+      </div>
     </div>
     <div class="column4">
       <div class="box">
 	<span class="icon icon-lock"></span>
 	<h3>open-source</h3>
 	<p>We like people to get envolved and contribute. With this framework build web appliations.</p>
-	<a href="#" class="button button-small">Etiam posuere</a> </div>
+      </div>
     </div>
   </div>
 </div>

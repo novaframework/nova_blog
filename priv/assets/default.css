@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #1B1B1B url(images/overlay.png) repeat;
+		background: #ed1b24 url(images/overlay.png) repeat;
 		font-family: 'Varela Round', sans-serif;
 		font-size: 11pt;
 		font-weight: 400;
@@ -34,7 +34,8 @@
 	
 	p
 	{
-		line-height: 180%;
+	    line-height: 180%;
+	    color: #000
 	}
 	
 	strong
@@ -245,7 +246,7 @@
 		width: 60px;
 		height: 60px;
 		line-height: 60px;
-		background: #6C2A6A;
+		background: #f7941d;
 		border-radius: 30px;
 		text-align: center;
 	}
@@ -404,7 +405,7 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		outline: 0;
-		color: #3C3C3C;
+		color: #f7941d;
 	}
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span
@@ -437,7 +438,7 @@
 
 	#wrapper2
 	{
-		background: #6C2A6A;
+		background: #f7941d;
 	}
 
 	#wrapper3
@@ -473,7 +474,7 @@
 	
 	#welcome .title h2
 	{
-		color: rgba(255,255,255,1);
+	    color: #000
 	}
 	
 	#welcome a,
@@ -519,7 +520,7 @@
 	
 	#footer .title h2
 	{
-		color: rgba(255,255,255,1);
+		color: #000
 	}
 
 

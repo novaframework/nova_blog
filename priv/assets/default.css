@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #ed1b24 url(images/overlay.png) repeat;
+		background: #f7941d url(images/overlay.png) repeat;
 		font-family: 'Varela Round', sans-serif;
 		font-size: 11pt;
 		font-weight: 400;
@@ -246,7 +246,7 @@
 		width: 60px;
 		height: 60px;
 		line-height: 60px;
-		background: #f7941d;
+		background: #000;
 		border-radius: 30px;
 		text-align: center;
 	}

@@ -33,7 +33,7 @@
           <div id="menu">
             <ul>
               <li class="{% if page == "start" %}current_page_item{% endif %}"><a href="/" accesskey="1" title="">Start</a></li>
-              <li class="{% if page == "guides" %}current_page_item{% endif %}"><a href="https://hexdocs.pm/nova/" accesskey="2" title="">Guides</a></li>
+              <li class="{% if page == "guides" %}current_page_item{% endif %}"><a href="https://github.com/novaframework/nova/blob/master/docs/02_quick-start.md" accesskey="2" title="">Quick start</a></li>
               <li class="{% if page == "blog" %}current_page_item{% endif %}"><a href="/blog" accesskey="3" title="">Blog</a></li>
               <li><a href="https://github.com/novaframework/nova" accesskey="4" title="">Github</a></li>
             </ul>

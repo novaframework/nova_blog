@@ -28,7 +28,7 @@
     <div id="wrapper1">
       <div id="header-wrapper">
         <div id="header" class="container">
-          <div id="logo"> <span class="icon icon-cogs"></span>
+          <div id="logo"> <img src="/assets/images/novaimage.png" \>
             <h1><a href="#">Nova Framework</a></h1>
             <span>Simple. Fault-tolerant. Distributed.</span> </div>
           <div id="menu">

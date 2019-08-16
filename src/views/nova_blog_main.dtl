@@ -29,7 +29,7 @@
     </div>
     <div class="column3">
       <div class="box">
-	<span class="icon icon-key"></span>
+	<span class="fab fa-erlang"></span>
 	<h3>Erlang</h3>
 	<p>Have been proven language to build applications handling million of users.</p>
       </div>

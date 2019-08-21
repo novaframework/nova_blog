@@ -8,7 +8,8 @@
                           ]},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    mnesia
    ]},
   {env,[
         {nova_applications, [

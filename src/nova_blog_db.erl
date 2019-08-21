@@ -71,16 +71,16 @@ get_entries() ->
                               ignore.
 init([]) ->
     process_flag(trap_exit, true),
-    mnesia:create_table(nova_blog_author, [
-                                           {attributes, record_info(fields, nova_blog_author)},
-                                           {disc_copies, [node()|nodes()]},
-                                           {type, set}
-                                          ]),
-    mnesia:create_table(nova_blog_entry, [
-                                          {attributes, record_info(fields, nova_blog_entry)},
-                                          {disc_copies, [node()|nodes()]},
-                                          {type, set}
-                                         ]),
+    {atomic, ok} = mnesia:create_table(nova_blog_author, [
+							  {attributes, record_info(fields, nova_blog_author)},
+							  {disc_copies, [node()]},
+							  {type, set}
+							 ]),
+    {atomic, ok} = mnesia:create_table(nova_blog_entry, [
+							 {attributes, record_info(fields, nova_blog_entry)},
+							 {disc_copies, [node()]},
+							 {type, set}
+							]),
     {ok, #state{}}.
 
 %%--------------------------------------------------------------------

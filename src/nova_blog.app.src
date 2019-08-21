@@ -4,12 +4,12 @@
   {registered, []},
   {mod, { nova_blog_app, []}},
   {included_applications, [
-                           nova
+                           nova,
+			   mnesia			   
                           ]},
   {applications,
    [kernel,
-    stdlib,
-    mnesia
+    stdlib
    ]},
   {env,[
         {nova_applications, [

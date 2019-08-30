@@ -1,6 +1,6 @@
 {application, nova_blog,
  [{description, "nova_blog managed by Nova"},
-  {vsn, "0.1.0"},
+  {vsn, "0.1.1"},
   {registered, []},
   {mod, { nova_blog_app, []}},
   {included_applications, [

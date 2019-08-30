@@ -6,7 +6,7 @@
 	  <div class="title">
 	    <h2>{{entry.title}}</h2>
             <p><small>{{ entry.date|date }}</small></p>
-	    <span class="byline">{{ entry.text | safe }}</span>
+            <span>{{ entry.text | safe }}</span>
             <hr />
           </div>
           {% endfor %}

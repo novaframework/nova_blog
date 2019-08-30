@@ -19,7 +19,7 @@
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="/assets/default.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/assets/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 
     <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -34,7 +34,7 @@
           <div id="menu">
             <ul>
               <li class="{% if page == "start" %}current_page_item{% endif %}"><a href="/" accesskey="1" title="">Start</a></li>
-              <li class="{% if page == "guides" %}current_page_item{% endif %}"><a href="https://github.com/novaframework/nova/blob/master/docs/02_quick-start.md" accesskey="2" title="">Quick start</a></li>
+              <li class="{% if page == "guides" %}current_page_item{% endif %}"><a href="https://novaframework.github.io/nova/02_quick-start.html" accesskey="2" title="">Quick start</a></li>
               <li class="{% if page == "blog" %}current_page_item{% endif %}"><a href="/blog" accesskey="3" title="">Blog</a></li>
               <li><a href="https://github.com/novaframework/nova" accesskey="4" title="">Github</a></li>
             </ul>

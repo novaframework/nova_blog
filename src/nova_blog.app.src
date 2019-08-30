@@ -5,13 +5,14 @@
   {mod, { nova_blog_app, []}},
   {included_applications, [
                            nova,
-			   mnesia			   
+			   mnesia
                           ]},
   {applications,
    [kernel,
     stdlib
    ]},
   {env,[
+        {dev_mode, true},
         {nova_applications, [
                                #{
                                  name => nova_blog,

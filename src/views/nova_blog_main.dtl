@@ -23,7 +23,7 @@
     <div class="column2">
       <div class="box">
 	<span class="icon icon-trophy"></span>
-	<h3>Djanto Templates</h3>
+	<h3>Django Templates</h3>
         <p>Poweful views that utilizes django templates.</p>
       </div>
     </div>

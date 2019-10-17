@@ -23,8 +23,8 @@
     <div class="column2">
       <div class="box">
 	<span class="icon icon-trophy"></span>
-	<h3>Cowboy</h3>
-        <p>Built on Cowboy as a web server. Can handle http, http2 and websockets.</p>
+	<h3>Djanto Templates</h3>
+        <p>Poweful views that utilizes django templates.</p>
       </div>
     </div>
     <div class="column3">

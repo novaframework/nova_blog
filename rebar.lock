@@ -5,7 +5,7 @@
  {<<"jsone">>,{pkg,<<"jsone">>,<<"1.5.0">>},1},
  {<<"nova">>,
   {git,"https://github.com/novaframework/nova.git",
-       {ref,"d3793b35af45dfe0a67d112b4550824aa087c35e"}},
+       {ref,"47bf14552fc3796990cb734e8f3ac98c9e6f0c56"}},
   0},
  {<<"quickrand">>,{pkg,<<"quickrand">>,<<"1.7.5">>},2},
  {<<"ranch">>,{pkg,<<"ranch">>,<<"1.7.1">>},2},

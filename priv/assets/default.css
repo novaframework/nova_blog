@@ -21,10 +21,25 @@ body {
 	-moz-transition-duration: 0.5s;
 	-o-transition-duration: 0.5s;
 }
-
 /*
    Multicoloured Hover Variations
 */
+
+#social-fb {
+	color: #f7941d;
+}
+#social-tw {
+	color: #f7941d;
+}
+#social-gh {
+	color: #f7941d;
+}
+#social-em {
+	color: #f7941d;
+}
+#social-slack {
+	color: #f7941d;
+}
 
 #social-fb:hover {
 	color: #3B5998;
@@ -32,11 +47,8 @@ body {
 #social-tw:hover {
 	color: #4099FF;
 }
-#social-gp:hover {
-	color: #d34836;
-}
 #social-em:hover {
-	color: #f39c12;
+	color: #fff;
 }
 #social-gh:hover {
 	color: #000;

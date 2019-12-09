@@ -1,20 +1,24 @@
 {% include "header.dtl" with page="start" %}
 
-<div class="container-fluid bg-danger">
-  <div class="row">
-    <div class="col-lg mx-auto">
-      <div class="col text-center">
+<div class="container-fluid justify-content-center">
+  <div class="row bg-danger">
+    <div class="col">
+      <div class="col-sm text-center">
         <h2>Welcome to Nova</h2>
+        <hr style="background-color: #000"/>
         <p>Nova make it simple to build a fault-tolerant and distributed web application. Ideas is inspired from different web frameworks and implement them with the functionality and stability that Erlang and BEAM have.</p>
       </div>
-      <div class="col text-center">
+    </div>
+    <div class="col">
+      <div class="col-sm text-center">
         <h2>Technology for the future</h2>
+        <hr style="background-color: #000"/>
         <span class="byline">Handling million of requests</span> 
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid h-25">
+<div class="container-fluid">
   <div class="row justify-content-center bg-danger">
     <div class="col-fluid">
       <div class="card bg-nova" style="width: 18rem;">

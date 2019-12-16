@@ -24,35 +24,32 @@
 </div>
 <div class="container-fluid">
   <div class="row justify-content-center bg-danger">
-    <div class="col-fluid">
-      <div class="card bg-nova" style="width: 18rem;">
-        <div class="card-body text-center">
-          <span class="icon icon-wrench"></span>
-          <h3 class="card-title">BEAM</h3>
-          <p class="card-text">Runs on a well tested VM that have been proven for the five nines.</p>
-          </div>
-        </div>
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="icon icon-wrench"></span>
+        <h3 class="card-title">BEAM</h3>
+        <p class="card-text">Runs on a well tested VM that have been proven for the five nines.</p>
       </div>
-      <div class="card bg-nova" style="width: 18rem;">
-        <div class="card-body text-center">
-          <span class="icon icon-trophy"></span>
-          <h3 class="card-title">Django Templates</h3>
-          <p class="card-text">Poweful views that utilizes django templates.</p>
-        </div>
+    </div>
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="icon icon-trophy"></span>
+        <h3 class="card-title">Django Templates</h3>
+        <p class="card-text">Poweful views that utilizes django templates.</p>
       </div>
-      <div class="card bg-nova" style="width: 18rem;">
-        <div class="card-body text-center">
-          <span class="fab fa-erlang"></span>
-          <h3 class="card-title">Erlang</h3>
-          <p class="card-text">Have been proven language to build applications handling million of users.</p>
-        </div>
+    </div>
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="fab fa-erlang"></span>
+        <h3 class="card-title">Erlang</h3>
+        <p class="card-text">Have been proven language to build applications handling million of users.</p>
       </div>
-      <div class="card bg-nova" style="width: 18rem;">
-        <div class="card-body text-center">
-          <span class="icon icon-lock"></span>
-          <h3 class="card-title">open-source</h3>
-          <p class="card-text">We like people to get envolved and contribute. With this framework build web appliations.</p>
-        </div>
+    </div>
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="icon icon-lock"></span>
+        <h3 class="card-title">open-source</h3>
+        <p class="card-text">We like people to get envolved and contribute. With this framework build web appliations.</p>
       </div>
     </div>
   </div>

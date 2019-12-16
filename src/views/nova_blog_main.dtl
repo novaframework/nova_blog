@@ -2,18 +2,22 @@
 
 <div class="container-fluid justify-content-center">
   <div class="row bg-danger">
-    <div class="col">
+    <div class="p-5 col">
       <div class="col-sm text-center">
         <h2>Welcome to Nova</h2>
         <hr style="background-color: #000"/>
         <p>Nova make it simple to build a fault-tolerant and distributed web application. Ideas is inspired from different web frameworks and implement them with the functionality and stability that Erlang and BEAM have.</p>
       </div>
     </div>
-    <div class="col">
+    <div class="p-5 col">
       <div class="col-sm text-center">
-        <h2>Technology for the future</h2>
+        <h2>Download Nova</h2>
         <hr style="background-color: #000"/>
-        <span class="byline">Handling million of requests</span> 
+        <h3>V0.2.2 (latest)</h3>
+        <div class="col">
+          <a class="btn btn-outline-dark" href="https://github.com/novaframework/nova/archive/v0.2.2.zip" accesskey="4" title="">nova.zip</a>
+          <a class="btn btn-outline-dark" href="https://github.com/novaframework/nova/archive/v0.2.2.tar.gz" accesskey="4" title="">nova.tar.gz</a>
+        </div>
       </div>
     </div>
   </div>

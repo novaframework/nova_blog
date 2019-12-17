@@ -1,44 +1,55 @@
 {% include "header.dtl" with page="start" %}
 
-<div id="wrapper2">
-  <div id="welcome" class="container">
-    <div class="title">
-      <h2>Welcome to Nova</h2>
+<div class="container-fluid justify-content-center"  style="color:white">
+  <div class="row bg-danger">
+    <div class="p-5 col">
+      <div class="col-sm text-center">
+        <h2>Welcome to Nova</h2>
+        <hr style="background-color: #000"/>
+        <p>Nova make it simple to build a fault-tolerant and distributed web application. Ideas is inspired from different web frameworks and implement them with the functionality and stability that Erlang and BEAM have.</p>
+      </div>
     </div>
-    <p>Nova make it simple to build a fault-tolerant and distributed web application. Ideas is inspired from different web frameworks and implement them with the functionality and stability that Erlang and BEAM have.</p>
+    <div class="p-5 col">
+      <div class="col-sm text-center">
+        <h2>Download Nova</h2>
+        <hr style="background-color: #000"/>
+        <h3>V0.2.2 (latest)</h3>
+        <div class="col">
+          <a class="btn btn-outline-dark" href="https://github.com/novaframework/nova/archive/v0.2.2.zip" accesskey="4" title="">nova.zip</a>
+          <a class="btn btn-outline-dark" href="https://github.com/novaframework/nova/archive/v0.2.2.tar.gz" accesskey="4" title="">nova.tar.gz</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div id="wrapper3">
-  <div id="portfolio" class="container">
-    <div class="title">
-      <h2>Technology for the future</h2>
-      <span class="byline">Handling million of requests</span> </div>
-    <div class="column1">
-      <div class="box">
-	<span class="icon icon-wrench"></span>
-	<h3>BEAM</h3>
-	<p>Runs on a well tested VM that have been proven for the five nines.</p>
+<div class="container-fluid">
+  <div class="p-5 row justify-content-center">
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="icon icon-wrench"></span>
+        <h3 class="card-title">BEAM</h3>
+        <p class="card-text">Runs on a well tested VM that have been proven for the five nines.</p>
       </div>
     </div>
-    <div class="column2">
-      <div class="box">
-	<span class="icon icon-trophy"></span>
-	<h3>Django Templates</h3>
-        <p>Poweful views that utilizes django templates.</p>
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="icon icon-trophy"></span>
+        <h3 class="card-title">Django Templates</h3>
+        <p class="card-text">Powerful views that utilizes django templates.</p>
       </div>
     </div>
-    <div class="column3">
-      <div class="box">
-	<span class="fab fa-erlang"></span>
-	<h3>Erlang</h3>
-	<p>Have been proven language to build applications handling million of users.</p>
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="fab fa-erlang"></span>
+        <h3 class="card-title">Erlang</h3>
+        <p class="card-text">Have been proven language to build applications handling million of users.</p>
       </div>
     </div>
-    <div class="column4">
-      <div class="box">
-	<span class="icon icon-lock"></span>
-	<h3>open-source</h3>
-	<p>We like people to get envolved and contribute. With this framework build web appliations.</p>
+    <div class="card bg-nova" style="width: 18rem;">
+      <div class="card-body text-center">
+        <span class="icon icon-lock"></span>
+        <h3 class="card-title">open-source</h3>
+        <p class="card-text">We like people to get envolved and contribute. With this framework build web appliations.</p>
       </div>
     </div>
   </div>

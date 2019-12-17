@@ -191,11 +191,15 @@ format_status(_Opt, Status) ->
 get_entries(0, _PrevKey) ->
     [];
 get_entries(Amount, PrevKey) ->
-    [Res|_] = ets:lookup(nova_blog_entry, PrevKey),
-    Result = ?RtoM(nova_blog_entry, Res),
-    case ets:next(nova_blog_entry, PrevKey) of
-        '$end_of_table' ->
-            [Result];
-        NextKey ->
-            [Result|get_entries(Amount-1, NextKey)]
+    case ets:lookup(nova_blog_entry, PrevKey) of
+        [] ->
+            [];
+        [Res|_] ->
+            Result = ?RtoM(nova_blog_entry, Res),
+            case ets:next(nova_blog_entry, PrevKey) of
+                '$end_of_table' ->
+                    [Result];
+                NextKey ->
+                    [Result|get_entries(Amount-1, NextKey)]
+            end
     end.

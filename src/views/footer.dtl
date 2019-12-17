@@ -1,4 +1,4 @@
-<div class="p-5 container-fluid bg-danger">
+<div class="p-5 container-fluid bg-danger" style="color:white">
   <div class="text-center">
     <h2>Get in touch</h2>
     <p>Nova framework is a open source project. Fork us and contribute today! We are in #nova channel on slack for support or twitter.</p>

@@ -35,7 +35,7 @@
       <div class="card-body text-center">
         <span class="icon icon-trophy"></span>
         <h3 class="card-title">Django Templates</h3>
-        <p class="card-text">Poweful views that utilizes django templates.</p>
+        <p class="card-text">Powerful views that utilizes django templates.</p>
       </div>
     </div>
     <div class="card bg-nova" style="width: 18rem;">

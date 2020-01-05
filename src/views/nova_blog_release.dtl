@@ -1,0 +1,24 @@
+{% include "header.dtl" with page="start" %}
+
+<div class="container" style="margin-top: 10px;">
+  <div class="row">
+    <div class="col-lg-10 padding">
+      <h1>Release {{current_release.version}}</h1>
+      <small>{{current_release.added|date:"Y-m-d"}}</small>
+      <p>{{current_release.description|safe}}</p>
+      <a href="https://github.com/novaframework/nova/archive/{{current_release.version}}.zip" class="red-button">Download ZIP-file</a>
+      <a href="https://github.com/novaframework/nova/archive/{{current_release.version}}.tar.gz" class="red-button">Download tar.gz-file</a>
+    </div>
+    <div class="col-lg-2 release-box">
+      <h2>Releases</h2><br />
+      {% for release in releases %}
+      {% if release.version == current_release.version %}
+      {{release.version}}<br />
+      {% else %}
+      <a href="/release/{{release.version}}">{{release.version}}</a><br />
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+{% include "footer.dtl" %}

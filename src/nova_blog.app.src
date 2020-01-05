@@ -1,11 +1,12 @@
 {application, nova_blog,
  [{description, "nova_blog managed by Nova"},
-  {vsn, "0.1.2"},
+  {vsn, "0.1.3"},
   {registered, []},
   {mod, { nova_blog_app, []}},
   {included_applications, [
                            nova,
-			   mnesia
+			   mnesia,
+                           epgsql
                           ]},
   {applications,
    [kernel,
@@ -19,8 +20,12 @@
                                  routes_file => "priv/nova_blog.routes.erl"
                                 }
                               ]},
-        {web_port, 8081}
-
+        {web_port, 8081},
+        {postgres_config, #{host => "127.0.0.1",
+                            username => "postgres",
+                            password => "root",
+                            database => "nova_blog",
+                            port => 5555}}
        ]},
   {modules, []},
   {maintainers, []},

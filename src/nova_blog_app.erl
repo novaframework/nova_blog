@@ -18,9 +18,6 @@ start(_StartType, _StartArgs) ->
     %% Set debug here
     logger:set_primary_config(level, debug),
 
-    mnesia:create_schema([node()]),
-    ok = mnesia:start(),
-
     nova_sup:start_link(),
     nova_blog_sup:start_link().
 

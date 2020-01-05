@@ -13,21 +13,39 @@
 %% API
 -export([
          start_link/0,
-         new_entry/1,
-         new_author/2,
-         get_entries/0
+         new_entry/3,
+         new_author/3,
+         get_author/1,
+         get_authors/0,
+         get_entry_by_id/1,
+         get_entries/0,
+         get_entries/1,
+         get_latest_release/0,
+         get_releases/0,
+         get_release/1,
+         new_release/3
         ]).
 
 %% gen_server callbacks
--export([init/1, handle_call/3, handle_cast/2, handle_info/2,
-         terminate/2, code_change/3, format_status/2]).
+-export([init/1,
+         handle_call/3,
+         handle_cast/2,
+         handle_info/2,
+         terminate/2,
+         code_change/3,
+         format_status/2]).
 
+-include_lib("nova/include/nova.hrl").
 -include_lib("nova_blog/include/nova_blog.hrl").
+-include_lib("nova_blog/include/nova_blog_migration.hrl").
+-include_lib("epgsql/include/epgsql.hrl").
 
 -define(SERVER, ?MODULE).
 -define(RtoM(Name, Record), lists:foldl(fun({I, E}, Acc) -> Acc#{E => element(I, Record)} end, #{}, lists:zip(lists:seq(2, (record_info(size, Name))), (record_info(fields, Name))))).
 
--record(state, {}).
+-record(state, {
+                connection :: epgsql:connection()
+               }).
 
 %%%===================================================================
 %%% API
@@ -45,14 +63,40 @@
 start_link() ->
     gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
-new_entry(Entry) ->
-    gen_server:cast(?SERVER, {new_entry, Entry}).
+new_entry(Title, Text, AuthorId) ->
+    gen_server:cast(?SERVER, {new_entry, Title, Text, AuthorId}).
 
-new_author(Name, About) ->
-    gen_server:call(?SERVER, {new_author, Name, About}).
+new_author(Name, About, Email) ->
+    gen_server:cast(?SERVER, {new_author, Name, About, Email}).
+
+get_author(Email) ->
+    gen_server:call(?SERVER, {get_author, Email}).
+
+get_authors() ->
+    gen_server:call(?SERVER, get_authors).
 
 get_entries() ->
-    gen_server:call(?SERVER, get_entries).
+    get_entries(20).
+
+get_entry_by_id(Id) when is_integer(Id) ->
+    gen_server:call(?SERVER, {get_entry_by_id, Id});
+get_entry_by_id(Id) ->
+    get_entry_by_id(erlang:binary_to_integer(Id)).
+
+get_entries(Amount) ->
+    gen_server:call(?SERVER, {get_entries, Amount}).
+
+get_latest_release() ->
+    gen_server:call(?SERVER, get_latest_release).
+
+get_releases() ->
+    gen_server:call(?SERVER, get_releases).
+
+get_release(Version) ->
+    gen_server:call(?SERVER, {get_release, Version}).
+
+new_release(Version, Changes, AuthorId) ->
+    gen_server:cast(?SERVER, {new_release, Version, Changes, AuthorId}).
 
 %%%===================================================================
 %%% gen_server callbacks
@@ -71,17 +115,10 @@ get_entries() ->
                               ignore.
 init([]) ->
     process_flag(trap_exit, true),
-    mnesia:create_table(nova_blog_author, [
-                                           {attributes, record_info(fields, nova_blog_author)},
-                                           {disc_copies, [node()]},
-                                           {type, set}
-                                          ]),
-    mnesia:create_table(nova_blog_entry, [
-                                          {attributes, record_info(fields, nova_blog_entry)},
-                                          {disc_copies, [node()]},
-                                          {type, set}
-                                         ]),
-    {ok, #state{}}.
+    PostgresConfig = application:get_env(nova_blog, postgres_config, #{}),
+    {ok, Connection} = epgsql:connect(PostgresConfig),
+    gen_server:cast(?SERVER, migrate),
+    {ok, #state{connection = Connection}}.
 
 %%--------------------------------------------------------------------
 %% @private
@@ -98,9 +135,109 @@ init([]) ->
                          {noreply, NewState :: term(), hibernate} |
                          {stop, Reason :: term(), Reply :: term(), NewState :: term()} |
                          {stop, Reason :: term(), NewState :: term()}.
-handle_call(get_entries, _From, State) ->
-    Result = get_entries(20, ets:first(nova_blog_entry)),
-    {reply, Result, State};
+handle_call({get_entries, Amount}, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  nova_blog_author.name AS author, ">>,
+           <<"  nova_blog_author.email AS author_email, ">>,
+           <<"  nova_blog_entry.id, ">>,
+           <<"  nova_blog_entry.title, ">>,
+           <<"  nova_blog_entry.content, ">>,
+           <<"  nova_blog_entry.added ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_entry ">>,
+           <<"INNER JOIN ">>,
+           <<"  nova_blog_author ">>,
+           <<"ON ">>,
+           <<"  nova_blog_author.id = nova_blog_entry.author_id ">>,
+           <<"ORDER BY ">>,
+           <<"  nova_blog_entry.added DESC ">>,
+           <<"LIMIT ">>,
+           <<"  $1">>],
+    {ok, Columns, Rows} = epgsql:equery(Conn, SQL, [Amount]),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
+handle_call({get_entry_by_id, Id}, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  nova_blog_author.name AS author, ">>,
+           <<"  nova_blog_author.email AS author_email, ">>,
+           <<"  nova_blog_entry.id, ">>,
+           <<"  nova_blog_entry.title, ">>,
+           <<"  nova_blog_entry.content, ">>,
+           <<"  nova_blog_entry.added ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_entry ">>,
+           <<"INNER JOIN ">>,
+           <<"  nova_blog_author ">>,
+           <<"ON ">>,
+           <<"  nova_blog_author.id = nova_blog_entry.author_id ">>,
+           <<"WHERE ">>,
+           <<"  nova_blog_entry.id = $1 ">>,
+           <<"ORDER BY ">>,
+           <<"  nova_blog_entry.added DESC ">>],
+    {ok, Columns, Rows} = epgsql:equery(Conn, SQL, [Id]),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
+handle_call(get_latest_release, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  version, ">>,
+           <<"  description, ">>,
+           <<"  added ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_release ">>,
+           <<"ORDER BY ">>,
+           <<"  added DESC ">>,
+           <<"LIMIT 1">>],
+    {ok, Columns, Rows} = epgsql:squery(Conn, SQL),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
+handle_call(get_releases, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  version, ">>,
+           <<"  description, ">>,
+           <<"  added ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_release ">>,
+           <<"ORDER BY ">>,
+           <<"  added DESC ">>],
+    {ok, Columns, Rows} = epgsql:squery(Conn, SQL),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
+handle_call(get_authors, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  id, ">>,
+           <<"  name, ">>,
+           <<"  description, ">>,
+           <<"  email ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_author">>],
+    {ok, Columns, Rows} = epgsql:squery(Conn, SQL),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
+handle_call({get_author, Email}, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  id, ">>,
+           <<"  name, ">>,
+           <<"  description, ">>,
+           <<"  email ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_author ">>,
+           <<"WHERE ">>,
+           <<"  email=$1">>],
+    {ok, Columns, Rows} = epgsql:equery(Conn, SQL, [Email]),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
+handle_call({get_release, Version}, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  version, ">>,
+           <<"  description, ">>,
+           <<"  added ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_release ">>,
+           <<"WHERE ">>,
+           <<"  version = $1">>],
+    {ok, Columns, Rows} = epgsql:equery(Conn, SQL, [Version]),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
 handle_call(_Request, _From, State) ->
     Reply = ok,
     {reply, Reply, State}.
@@ -116,17 +253,65 @@ handle_call(_Request, _From, State) ->
                          {noreply, NewState :: term(), Timeout :: timeout()} |
                          {noreply, NewState :: term(), hibernate} |
                          {stop, Reason :: term(), NewState :: term()}.
-handle_cast({new_entry, Entry}, State) ->
-    mnesia:transaction(fun() ->
-                               mnesia:write(Entry)
-                       end),
+handle_cast({new_entry, Title, Text, AuthorId}, State = #state{connection = Conn}) ->
+    SQL = [<<"INSERT INTO ">>,
+           <<"  nova_blog_entry ">>,
+           <<"  (">>,
+           <<"    title, ">>,
+           <<"    content, ">>,
+           <<"    author_id ">>,
+           <<"  ) VALUES (">>,
+           <<"    $1, ">>,
+           <<"    $2, ">>,
+           <<"    $3 ">>,
+           <<"  )">>],
+    case epgsql:equery(Conn, SQL, [Title, Text, AuthorId]) of
+        {ok, _Count} ->
+            ?DEBUG("Insert of new entry succeeded");
+        Return ->
+            ?WARNING("Could not insert new entry. Got return: ~p", [Return])
+        end,
     {noreply, State};
-handle_cast({new_author, Name, About}, State) ->
-    Entry = #nova_blog_author{name = Name,
-                              about = About},
-    mnesia:transaction(fun() ->
-                               mnesia:write(Entry)
-                       end),
+handle_cast({new_author, Name, About, Email}, State = #state{connection = Conn}) ->
+    SQL = [<<"INSERT INTO ">>,
+           <<"  nova_blog_author ">>,
+           <<"  (">>,
+           <<"    name, ">>,
+           <<"    email, ">>,
+           <<"    description ">>,
+           <<"  ) VALUES ( ">>,
+           <<"    $1, ">>,
+           <<"    $2, ">>,
+           <<"    $3 ">>,
+           <<"  )">>],
+    case epgsql:equery(Conn, SQL, [Name, Email, About]) of
+        {ok, _Count} ->
+            ?DEBUG("Insert of new author succeeded");
+        Return ->
+            ?WARNING("Could not insert new author. Got return: ~p", [Return])
+    end,
+    {noreply, State};
+handle_cast({new_release, Version, Changes, AuthorId}, State = #state{connection = Conn}) ->
+    SQL = [<<"INSERT INTO ">>,
+           <<"  nova_blog_release ">>,
+           <<"  (">>,
+           <<"    version, ">>,
+           <<"    description, ">>,
+           <<"    author_id ">>,
+           <<"  ) VALUES (">>,
+           <<"    $1, ">>,
+           <<"    $2, ">>,
+           <<"    $3 ">>,
+           <<"  )">>],
+    case epgsql:equery(Conn, SQL, [Version, Changes, AuthorId]) of
+        {ok, _Count} ->
+            ?DEBUG("Insert of new release succeeded");
+        Return ->
+            ?WARNING("Could not insert new release. Got return: ~p", [Return])
+    end,
+    {noreply, State};
+handle_cast(migrate, State = #state{connection = Conn}) ->
+    epgsql:squery(Conn, ?NOVA_BLOG_TABLES),
     {noreply, State};
 handle_cast(_Request, State) ->
     {noreply, State}.
@@ -188,18 +373,9 @@ format_status(_Opt, Status) ->
 %%%===================================================================
 %%% Internal functions
 %%%===================================================================
-get_entries(0, _PrevKey) ->
-    [];
-get_entries(Amount, PrevKey) ->
-    case ets:lookup(nova_blog_entry, PrevKey) of
-        [] ->
-            [];
-        [Res|_] ->
-            Result = ?RtoM(nova_blog_entry, Res),
-            case ets:next(nova_blog_entry, PrevKey) of
-                '$end_of_table' ->
-                    [Result];
-                NextKey ->
-                    [Result|get_entries(Amount-1, NextKey)]
-            end
-    end.
+rows_to_map(Columns, Rows) ->
+    Columns1 = lists:map(fun(#column{name = Name}) -> Name end, Columns),
+    lists:map(fun(Row) ->
+                      Row1 = erlang:tuple_to_list(Row),
+                      maps:from_list(lists:zip(Columns1, Row1))
+              end, Rows).

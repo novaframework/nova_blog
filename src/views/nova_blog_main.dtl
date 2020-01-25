@@ -21,11 +21,11 @@
     <div class="p-5 col">
       <div class="col-sm text-left">
         <h2>Welcome to Nova</h2>
-        <p>Nova make it simple to build a fault-tolerant and distributed web application. Ideas is inspired from different web frameworks and implement them with the functionality and stability that Erlang and BEAM have.</p>
+        <p>Nova makes it simple to build a fault-tolerant and distributed web application. It takes ideas from different web frameworks and implements them with the functionality and stability that Erlang and BEAM offer.</p>
         <ul>
-          <li><b>Erlang/OTP</b><br />Runs on a well tested Erlang VM (BEAM) that have been proven for the five nines.</li>
+          <li><b>Erlang/OTP</b><br />Runs on a well tested Erlang VM (BEAM) that has been proven up to five nines availability.</li>
           <li><b>Django Templates</b><br />Powerful views that utilizes django templates.</li>
-          <li><b>Open-source</b><br />We like people to get envolved and contribute. With this framework build web appliations.</li>
+          <li><b>Open-source</b><br />We encourage people to get involved and contribute to the project, and build web applications with this framework.</li>
         </ul>
         <a href="https://github.com/novaframework/nova" class="button red-flat">Learn more about Nova</a>
       </div>

@@ -1,7 +1,7 @@
 <div class="p-5 container-fluid">
   <div class="text-center">
     <h2>Get in touch</h2>
-    <p>Nova framework is a open source project. Fork us and contribute today! We are in #nova channel on slack for support or twitter.</p>
+    <p>Nova framework is an open source project. Fork us and contribute today! For support you can find us in the #nova Slack channel, or on Twitter.</p>
   </div>
   <div class="text-center center-block">
     <a href="https://twitter.com/intent/tweet?screen_name=FrameworkNova&ref_src=twsrc%5Etfw"><i id="social-tw" class="fab fa-twitter-square fa-3x social"></i></a>

@@ -49,7 +49,7 @@
     <div class="col-md-3 news-item">
       <small>{{news.added|date:"M d"}}</small>
       <h3>{{news.title}}</h3>
-      <p>{{news.content|truncatechars:168}}</p>
+      <p>{{news.content|striptags|truncatechars:168}}</p>
       <a href="/article/{{news.id}}">READ MORE</a>
     </div>
     {% endfor %}

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <link href="/assets/fonts.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="/assets/gh-fork-ribbon.css" rel="stylesheet" type="text/css" media="screen" />
       <link href="/assets/default.css" rel="stylesheet" type="text/css" media="all" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 
@@ -16,6 +17,7 @@
 
       </head>
       <body>
+        <a class="github-fork-ribbon right-top" href="https://github.com/novaframework" data-ribbon="Fork us on GitHub" title="Fork us on GitHub">Fork us on GitHub</a>
     	<header>
           <div class="container-fluid">
             <div class="row">

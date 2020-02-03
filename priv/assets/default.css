@@ -10,7 +10,7 @@ body {
 
 h1 {
     margin-top: 10px;
-    line-height:20px;
+    line-height:30px;
 }
 
 h2 {
@@ -203,10 +203,32 @@ nav .underlined {
     font-family:'Varela Round';
     font-size:15px;
     font-weight:600;
-    padding:11px 23px;
+    padding:5px 17px;
     text-decoration:none;
     text-shadow:0px -1px 0px #000000;
+    margin: 5px;
 }
+
+@media (min-width: 576px) {
+    .red-button {
+        box-shadow:inset 0px 1px 3px 0px #dbf2d5;
+        background:linear-gradient(to bottom, #bc004e 5%, #98173c 100%);
+        background-color:#bc004e;
+        border-radius:5px;
+        border:1px solid #8e0000;
+        display:inline-block;
+        cursor:pointer;
+        color:#f5f5f5;
+        font-family:'Varela Round';
+        font-size:15px;
+        font-weight:600;
+        padding:11px 23px;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #000000;
+    }
+}
+
+
 .red-button:hover {
     text-decoration: none;
     color:#f5f5f5;

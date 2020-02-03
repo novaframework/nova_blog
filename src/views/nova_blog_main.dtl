@@ -5,7 +5,7 @@
 
 <div class="container-fluid justify-content-center"  style="color:white">
   <div class="row paperbg">
-    <div class="col-lg-6 text-left" style="padding: 80px; padding-top: 40px; padding-bottom: 40px;">
+    <div class="col-lg-6 text-left d-none d-lg-block d-xl-block" style="padding: 80px; padding-top: 40px; padding-bottom: 40px;">
       <img src="/assets/erlang_logo.svg" style="float: left; width: 200px; margin-right: 10px;">
       <h3 class="erlang-line">Built by developers<br />- for developers</h3>
     </div> <!-- col -->
@@ -18,7 +18,7 @@
     </div>
   </div> <!-- row -->
   <div class="row redish">
-    <div class="p-5 col">
+    <div class="p-lg-5 p-3 col">
       <div class="col-sm text-left">
         <h2>Welcome to Nova</h2>
         <p>Nova makes it simple to build a fault-tolerant and distributed web application. It takes ideas from different web frameworks and implements them with the functionality and stability that Erlang and BEAM offer.</p>
@@ -30,7 +30,7 @@
         <a href="https://github.com/novaframework/nova" class="button red-flat">Learn more about Nova</a>
       </div>
     </div>
-    <div class="p-5 col">
+    <div class="p-lg-5 p-3 col">
       <div class="col-sm text-left">
         <h2>Quick start</h2>
         <p>Nova is really easy to understand and you will have a web application up and running within 15-minutes. Just follow our guide.</p>

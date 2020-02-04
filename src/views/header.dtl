@@ -39,7 +39,7 @@
                     <li class="nav-item"><a class="nav-link" href="/" accesskey="1" title="">Start</a></li>
                     <li class="nav-item"><a class="nav-link" href="/article" accesskey="1" title="">Articles</a></li>
                     <li class="nav-item"><a class="nav-link" href="/release" accesskey="1" title="">Downloads</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/novaframework/nova/blob/master/docs/" accesskey="1" title="">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs" accesskey="1" title="">Documentation</a></li>
                     <li class="nav-item"><a class="nav-link" href="/community" accesskey="1" title="">Community</a></li>
                     <li class="nav-item"><a class="nav-link" href="/forum" accesskey="1" title="">Forum</a></li>
                   </ul>

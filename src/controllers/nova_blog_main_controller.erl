@@ -5,7 +5,7 @@
          internal_error/1
         ]).
 
-index(#{method := <<"GET">>} = _Req) ->
+index(#{req := #{method := <<"GET">>}}) ->
     LastRelease =
         case nova_blog_db:get_latest_release() of
             {ok, [Entry|_]} -> Entry;

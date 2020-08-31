@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <link href="/assets/fonts.css" rel="stylesheet" type="text/css" media="all" />
       <link href="/assets/gh-fork-ribbon.css" rel="stylesheet" type="text/css" media="screen" />
-      <link href="/assets/default.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="/assets/css/materialize.min.css" rel="stylesheet" type="text/css" media="all" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 
         <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->

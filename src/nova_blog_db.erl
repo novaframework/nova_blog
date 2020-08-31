@@ -115,10 +115,9 @@ new_release(Version, Changes, AuthorId) ->
                               ignore.
 init([]) ->
     process_flag(trap_exit, true),
-    PostgresConfig = application:get_env(nova_blog, postgres_config, #{}),
-    {ok, Connection} = epgsql:connect(PostgresConfig),
+    gen_server:cast(?SERVER, connect),
     gen_server:cast(?SERVER, migrate),
-    {ok, #state{connection = Connection}}.
+    {ok, #state{}}.
 
 %%--------------------------------------------------------------------
 %% @private
@@ -324,6 +323,10 @@ handle_cast({new_release, Version, Changes, AuthorId}, State = #state{connection
 handle_cast(migrate, State = #state{connection = Conn}) ->
     epgsql:squery(Conn, ?NOVA_BLOG_TABLES),
     {noreply, State};
+handle_cast(connect, State) ->
+    PostgresConfig = application:get_env(nova_blog, postgres_config, #{}),
+    {ok, Connection} = epgsql:connect(PostgresConfig),
+    {noreply, #state{connection = Connection}};
 handle_cast(_Request, State) ->
     {noreply, State}.
 

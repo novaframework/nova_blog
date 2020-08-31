@@ -3,6 +3,6 @@
          index/1
         ]).
 
-index(#{method := <<"GET">>} = _Req) ->
+index(#{req := #{method := <<"GET">>}}) ->
     Result = nova_blog_db:get_entries(),
     {ok, [{entries, Result}]}.

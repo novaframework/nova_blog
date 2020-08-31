@@ -1,7 +1,7 @@
 -module(nova_blog_article_controller).
 -export([index/1]).
 
-index(Req) ->
+index(#{req := Req}) ->
     CurrentEntry =
         case cowboy_req:binding(id, Req, undefined) of
             undefined ->

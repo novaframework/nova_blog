@@ -17,8 +17,7 @@
 start(_StartType, _StartArgs) ->
     %% Set debug here
     logger:set_primary_config(level, debug),
-
-    nova_sup:start_link(),
+    nova:setup_application(nova_blog),
     nova_blog_sup:start_link().
 
 %%--------------------------------------------------------------------

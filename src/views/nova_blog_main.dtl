@@ -1,4 +1,4 @@
-{% include "header.dtl" with page="start" %}
+{% include "views/header.dtl" with page="start" %}
 {% if error %}
 <center><h2 style="color: red;">{{error}}</h2></center>
 {% endif %}
@@ -7,7 +7,7 @@
   <div class="row paperbg">
     <div class="col-lg-6 text-left d-none d-lg-block d-xl-block" style="padding: 80px; padding-top: 40px; padding-bottom: 40px;">
       <img src="/assets/erlang_logo.svg" style="float: left; width: 200px; margin-right: 10px;">
-      <h3 class="erlang-line">Built by developers<br />- for developers</h3>
+      <h3 class="erlang-line">Built by developers<br />- for developers {% url "/" application="nova_blog" %}</h3>
     </div> <!-- col -->
     <div class="col-lg-6" style="padding: 20px; padding-top: 40px; padding-bottom: 40px;">
       <h2>Download Nova</h2>
@@ -57,4 +57,4 @@
 
 </div>
 
-{% include "footer.dtl" %}
+{% include "views/footer.dtl" %}

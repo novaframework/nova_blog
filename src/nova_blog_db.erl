@@ -238,6 +238,17 @@ handle_call({get_release, Version}, _From, State = #state{connection = Conn}) ->
     {ok, Columns, Rows} = epgsql:equery(Conn, SQL, [Version]),
     Result = rows_to_map(Columns, Rows),
     {reply, {ok, Result}, State};
+handle_call({get_forum_threads}, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  * ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_forum ">>,
+           <<"WHERE ">>,
+           <<"  parent = '' ">>,
+           <<"LIMIT 0, 50">>],
+    {ok, Columns, Rows} = epgsql:equery(Conn, SQL, []),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
 handle_call(_Request, _From, State) ->
     Reply = ok,
     {reply, Reply, State}.

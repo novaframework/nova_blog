@@ -4,28 +4,34 @@
   {registered, []},
   {mod, { nova_blog_app, []}},
   {included_applications, [
-                           nova,
-			   mnesia,
-                           epgsql
+
                           ]},
   {applications,
-   [kernel,
-    stdlib
+   [
+    nova,
+    kernel,
+    stdlib,
+    mnesia,
+    epgsql
    ]},
   {env,[
         {dev_mode, true},
         {nova_applications, [
-                               #{
-                                 name => nova_blog,
-                                 routes_file => "priv/nova_blog.routes.erl"
-                                }
-                              ]},
+                             #{
+                               name => nova_blog,
+                               routes_file => "priv/nova_blog.routes.erl"
+                              }
+                            ]},
         {web_port, 8081},
         {postgres_config, #{host => "127.0.0.1",
                             username => "postgres",
                             password => "root",
                             database => "nova_blog",
-                            port => 5555}}
+                            port => 5555}},
+        {compile_options, [
+                           {dtl, [{libraries, [{nova_erlydtl, nova_erlydtl_inventory}]},
+                                  {default_libraries, [nova_erlydtl]}]}
+                          ]}
        ]},
   {modules, []},
   {maintainers, []},

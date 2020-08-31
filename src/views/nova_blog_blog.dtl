@@ -1,4 +1,4 @@
-{% include "header.dtl" with page="blog" %}
+{% include "views/header.dtl" with page="blog" %}
 
       <div id="wrapper3">
 	<div class="container">
@@ -13,4 +13,4 @@
 	</div>
       </div>
 
-{% include "footer.dtl" %}
+{% include "views/footer.dtl" %}

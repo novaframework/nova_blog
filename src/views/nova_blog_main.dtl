@@ -1,60 +1,130 @@
 {% include "views/header.dtl" with page="start" %}
-{% if error %}
-<center><h2 style="color: red;">{{error}}</h2></center>
-{% endif %}
+    <section class="hero-radiant">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>Nova</h1>
+            <h2>Simple. Fault-tolerant. Distributed.</h2>
+            <h3>Release: ...</h3>
+            <div>
+              <a
+                href="http://novaframework.org/"
+                class="btn btn-outline-dark"
+                role="button"
+                >.tar</a
+              >
+              <a
+                href="http://novaframework.org/"
+                class="btn btn-outline-dark"
+                role="button"
+                >.zip</a
+              >
+            </div>
+          </div>
+          <div
+            class="shadow p-3 mb-5 bg-white rounded col"
+            style="width: 36rem"
+          >
+            <h2>Quick start</h2>
 
-<div class="container-fluid justify-content-center"  style="color:white">
-  <div class="row paperbg">
-    <div class="col-lg-6 text-left d-none d-lg-block d-xl-block" style="padding: 80px; padding-top: 40px; padding-bottom: 40px;">
-      <img src="/assets/erlang_logo.svg" style="float: left; width: 200px; margin-right: 10px;">
-      <h3 class="erlang-line">Built by developers<br />- for developers {% url "/" application="nova_blog" %}</h3>
-    </div> <!-- col -->
-    <div class="col-lg-6" style="padding: 20px; padding-top: 40px; padding-bottom: 40px;">
-      <h2>Download Nova</h2>
-      <h3 class="version">{{last_release.version}}</h3>
-      <p>Download the latest version of Nova today to start Erlang web-development today! Read more about what is new in version {{last_release.version}} in the <a href="/release/{{last_release.version}}">changelogs</a></p>
-      <a href="https://github.com/novaframework/nova/archive/{{last_release.version}}.zip" class="red-button">Download ZIP-file</a>
-      <a href="https://github.com/novaframework/nova/archive/{{last_release.version}}.tar.gz" class="red-button">Download tar.gz-file</a>
-    </div>
-  </div> <!-- row -->
-  <div class="row redish">
-    <div class="p-lg-5 p-3 col">
-      <div class="col-sm text-left">
-        <h2>Welcome to Nova</h2>
-        <p>Nova makes it simple to build a fault-tolerant and distributed web application. It takes ideas from different web frameworks and implements them with the functionality and stability that Erlang and BEAM offer.</p>
-        <ul>
-          <li><b>Erlang/OTP</b><br />Runs on a well tested Erlang VM (BEAM) that has been proven up to five nines availability.</li>
-          <li><b>Django Templates</b><br />Powerful views that utilizes django templates.</li>
-          <li><b>Open-source</b><br />We encourage people to get involved and contribute to the project, and build web applications with this framework.</li>
-        </ul>
-        <a href="https://github.com/novaframework/nova" class="button red-flat">Learn more about Nova</a>
-      </div>
-    </div>
-    <div class="p-lg-5 p-3 col">
-      <div class="col-sm text-left">
-        <h2>Quick start</h2>
-        <p>Nova is really easy to understand and you will have a web application up and running within 15-minutes. Just follow our guide.</p>
-        <a href="https://github.com/novaframework/nova/blob/master/docs/README.md" class="button red-flat">Get started with Nova</a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12" style="padding-top: 40px; padding-left: 20px; padding-right: 20px; border-bottom: 1px solid #DDD">
-      <h2 style="float:left;">LATEST ARTICLES</h2>
-      <a href="/article" style="float: right;">See all</a>
-    </div>
-  </div>
-  <div class="row" style="padding-top: 20px; padding-bottom: 40px; border-bottom: 1px solid #DDD;">
-  {% for news in latest_news %}
-    <div class="col-md-3 news-item">
-      <small>{{news.added|date:"M d"}}</small>
-      <h3>{{news.title}}</h3>
-      <p>{{news.content|striptags|truncatechars:168}}</p>
-      <a href="/article/{{news.id}}">READ MORE</a>
-    </div>
-    {% endfor %}
-  </div>
+            <p>
+            Start by adding the rebar3 template for Nova. This can be done by running the installation script;
+            </p>
+            <div class="container">
+            <p class="bg-dark text-white">
+            Via curl: <br><br>
 
-</div>
+            sh -c "$(curl -fsSL https://raw.githubusercontent.com/novaframework/nova/master/tools/install.sh)"
+            </p>
+            </div>
+            <div class="container">
+            <p class="bg-dark text-white">
+            
+            Via wget: <br><br>
+
+            sh -c "$(wget -O- https://raw.githubusercontent.com/novaframework/nova/master/tools/install.sh)"
+            </p>
+            </div>
+            <p>
+After this is done use rebar3 to generate a new project with Nova.
+            </p>
+            <div class="container">
+            <p class="bg-dark text-white">
+            rebar3 new nova my_first_nova
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container">
+        <div class="row">
+          <div
+            class="shadow p-3 mb-5 bg-white rounded col-sm"
+            style="width: 36rem"
+          >
+            <div class="container">
+              <h4>Welcome to Nova</h4>
+              <p>
+                Nova makes it simple to build a fault-tolerant and distributed
+                web application. It takes ideas from different web frameworks
+                and implements them with the functionality and stability that
+                Erlang and BEAM offer.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm" style="width: 36rem; margin-left: 10px"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm" style="width: 36rem"></div>
+          <div
+            class="shadow p-3 mb-5 bg-white rounded col-sm"
+            style="width: 36rem; margin-left: 10px"
+          >
+            <div class="container">
+              <h4><i class="fab fa-erlang"></i> Erlang/OTP</h4>
+              <p>
+                Runs on a well tested Erlang VM (BEAM) that has been proven up
+                to five nines availability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div
+            class="shadow p-3 mb-5 bg-white rounded col-sm"
+            style="width: 36rem"
+          >
+            <div class="container">
+              <h4><i class="fas fa-file-import"></i> Django Templates</h4>
+              <p>Powerful views that utilizes django templates.</p>
+            </div>
+          </div>
+          <div class="col-sm" style="width: 36rem; margin-left: 10px"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm" style="width: 36rem"></div>
+          <div
+            class="shadow p-3 mb-5 bg-white rounded col-sm"
+            style="width: 36rem; margin-left: 10px"
+          >
+            <div class="container">
+              <h4><i class="fab fa-github"></i> Open-source</h4>
+              <p>
+                We encourage people to get involved and contribute to the
+                project, and build web applications with this framework.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 {% include "views/footer.dtl" %}

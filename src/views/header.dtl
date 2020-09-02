@@ -1,49 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link href="/assets/fonts.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="/assets/gh-fork-ribbon.css" rel="stylesheet" type="text/css" media="screen" />
-      <link href="/assets/css/materialize.min.css" rel="stylesheet" type="text/css" media="all" />
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <title>Nova Framework</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
 
-        <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.1/css/all.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      </head>
-      <body>
-        <a class="github-fork-ribbon right-top" href="https://github.com/novaframework" data-ribbon="Fork us on GitHub" title="Fork us on GitHub">Fork us on GitHub</a>
-    	<header>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="p-3 col">
-                <div class="text-center logo">
-                  <img src="/assets/images/novaimage.png" \>
-                    <h1>Nova Framework</h1>
-                    <span>Simple. Fault-tolerant. Distributed.</span>
-                  </div>
-                </div>
-              </div>
-              <nav class="navbar navbar-expand-md justify-content-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                  <span class="navbar-toggler-icon"><span class="fas fa-bars"></span></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center underlined" id="collapsibleNavbar">
-                  <ul class="navbar-nav text-center">
-                    <li class="nav-item"><a class="nav-link" href="/" accesskey="1" title="">Start</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/article" accesskey="1" title="">Articles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/release" accesskey="1" title="">Downloads</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/docs" accesskey="1" title="">Documentation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/community" accesskey="1" title="">Community</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/forum" accesskey="1" title="">Forum</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-	  </header>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <a class="nav-link mr-auto" href="#">LOGO</a>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Documentation</a>
+          </li>
+        </ul>
+      </div>
+    </nav>

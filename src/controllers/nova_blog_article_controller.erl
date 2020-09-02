@@ -5,8 +5,12 @@ index(#{req := Req}) ->
     CurrentEntry =
         case cowboy_req:binding(id, Req, undefined) of
             undefined ->
-                {ok, [Entry|_]} = nova_blog_db:get_entries(1),
-                Entry;
+                case nova_blog_db:get_entries(1) of
+                    {ok, []} ->
+                        [];
+                    {ok, [Entry|_]} ->
+                        Entry
+                end;
             Id ->
                 {ok, [Entry|_]} = nova_blog_db:get_entry_by_id(Id),
                 Entry

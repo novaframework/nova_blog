@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: rgb(233, 232, 238);
+}
+
+.hero-radiant {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: rgb(247, 148, 29);
+  background: radial-gradient(
+    circle,
+    rgba(247, 148, 29, 1) 0%,
+    rgba(176, 17, 77, 1) 36%,
+    rgb(233, 232, 238) 100%
+  );
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-inner {
+}
+
+.hero-radiant h1 {
+  font-size: 5em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: rgb(233, 232, 238);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: right;
+  display: block;
+  color: rgb(176, 17, 77);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.content {
+  margin-top: 10px;
+  color: black;
+}
+
+.content-red {
+  margin-top: 10px;
+  background-color: rgb(176, 17, 77);
+}
+
+main {
+  margin-top: 10px;
+  color: black;
+}
+
+.card-shadow {
+  box-shadow: 400px 80px 40px 20px rgba(176, 17, 77, 1) 36%;
+}
+.wave-container {
+  position: relative;
+  background: #09f;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}

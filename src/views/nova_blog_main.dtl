@@ -53,9 +53,11 @@ After this is done use rebar3 to generate a new project with Nova.
             rebar3 new nova my_first_nova
             </p>
             </div>
-          </div>
+               
         </div>
+      
       </div>
+     
     </section>
     <section class="content">
       <div class="container">

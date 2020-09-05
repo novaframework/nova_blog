@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: Rockwell;
   background-color: rgb(233, 232, 238);
 }
 
@@ -12,11 +12,11 @@ body {
   align-items: center;
   text-align: center;
 
-  background: rgb(247, 148, 29);
+  background: rgb(190,30,45);
   background: radial-gradient(
     circle,
-    rgba(247, 148, 29, 1) 0%,
-    rgba(176, 17, 77, 1) 36%,
+    rgba(190,30,45, 1) 0%,
+    rgba(28,117,188, 1) 36%,
     rgb(233, 232, 238) 100%
   );
   background-position: center center;
@@ -25,6 +25,13 @@ body {
 }
 
 .hero-inner {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgb(190,30,45);
 }
 
 .hero-radiant h1 {
@@ -47,7 +54,7 @@ body {
 .navbar a {
   float: right;
   display: block;
-  color: rgb(176, 17, 77);
+  color: rgb(190,30,45);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -66,7 +73,7 @@ body {
 
 .content-red {
   margin-top: 10px;
-  background-color: rgb(176, 17, 77);
+  background-color: rgb(190,30,45);
 }
 
 main {
@@ -77,10 +84,7 @@ main {
 .card-shadow {
   box-shadow: 400px 80px 40px 20px rgba(176, 17, 77, 1) 36%;
 }
-.wave-container {
-  position: relative;
-  background: #09f;
-  color: #fff;
-  text-align: center;
-  overflow: hidden;
+
+a {
+    color: #1C75BC
 }

@@ -1,21 +1,21 @@
 {% include "views/header.dtl" with page="start" %}
-    <section class="hero-radiant">
+    <section class="hero-inner">
       <div class="container">
         <div class="row">
-          <div class="col">
+          <div class="col text-white">
             <h1>Nova</h1>
             <h2>Simple. Fault-tolerant. Distributed.</h2>
             <h3>Release: ...</h3>
             <div>
               <a
                 href="http://novaframework.org/"
-                class="btn btn-outline-dark"
+                class="btn btn-outline-light"
                 role="button"
                 >.tar</a
               >
               <a
                 href="http://novaframework.org/"
-                class="btn btn-outline-dark"
+                class="btn btn-outline-light"
                 role="button"
                 >.zip</a
               >

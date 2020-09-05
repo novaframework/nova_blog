@@ -49,17 +49,11 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <a class="nav-link mr-auto" href="#">LOGO</a>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Articles</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Documentation</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/article" accesskey="1" title="">Articles</a></li>
+          <li class="nav-item"><a class="nav-link" href="/release" accesskey="1" title="">Downloads</a></li>
+          <li class="nav-item"><a class="nav-link" href="/docs" accesskey="1" title="">Documentation</a></li>
+          <li class="nav-item"><a class="nav-link" href="/community" accesskey="1" title="">Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="/forum" accesskey="1" title="">Forum</a></li>
         </ul>
       </div>
     </nav>

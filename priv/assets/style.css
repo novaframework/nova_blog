@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Rockwell;
-  background-color: rgb(233, 232, 238);
+  background-color: #fff; /*  rgb(233, 232, 238);*/
 }
 
 .hero-radiant {
@@ -43,10 +43,11 @@ body {
 /* The navigation bar */
 .navbar {
   overflow: hidden;
-  background-color: rgb(233, 232, 238);
+  background-color: #fff; /* rgb(233, 232, 238);*/
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  height: 40px;
   z-index: 1;
 }
 
@@ -82,10 +83,30 @@ main {
   color: black;
 }
 
-.card-shadow {
-  box-shadow: 400px 80px 40px 20px rgba(176, 17, 77, 1) 36%;
+.bg-card {
+    background-color: rgb(233, 232, 238);
 }
 
 a {
     color: #1C75BC
 }
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px;    /* if you want it vertically middle of the navbar. */
+}
+
+.img-responsive {
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 250px;
+}
+
+.title-red {
+  color: rgb(190,30,45);
+}  

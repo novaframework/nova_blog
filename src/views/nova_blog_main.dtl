@@ -3,22 +3,14 @@
       <div class="container">
         <div class="row">
           <div class="col text-white">
-            <h1>Nova</h1>
-            <h2>Simple. Fault-tolerant. Distributed.</h2>
-            <h3>Release: ...</h3>
-            <div>
-              <a
-                href="http://novaframework.org/"
-                class="btn btn-outline-light"
-                role="button"
-                >.tar</a
-              >
-              <a
-                href="http://novaframework.org/"
-                class="btn btn-outline-light"
-                role="button"
-                >.zip</a
-              >
+            <div class="container">
+              <h1>Welcome to Nova</h4>
+              <p>
+                Nova makes it simple to build a fault-tolerant and distributed
+                web application. It takes ideas from different web frameworks
+                and implements them with the functionality and stability that
+                Erlang and BEAM offer.
+              </p>
             </div>
           </div>
           <div
@@ -60,25 +52,6 @@ After this is done use rebar3 to generate a new project with Nova.
      
     </section>
     <section class="content">
-      <div class="container">
-        <div class="row">
-          <div
-            class="shadow p-3 mb-5 bg-card rounded col-sm"
-            style="width: 36rem"
-          >
-            <div class="container">
-              <h4 class="title-red">Welcome to Nova</h4>
-              <p>
-                Nova makes it simple to build a fault-tolerant and distributed
-                web application. It takes ideas from different web frameworks
-                and implements them with the functionality and stability that
-                Erlang and BEAM offer.
-              </p>
-            </div>
-          </div>
-          <div class="col-sm" style="width: 36rem; margin-left: 10px"></div>
-        </div>
-      </div>
       <div class="container">
         <div class="row">
           <div class="col-sm" style="width: 36rem"></div>

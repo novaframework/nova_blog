@@ -34,6 +34,17 @@ body {
   background: rgb(190,30,45);
 }
 
+.hero-inner-white {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+
 .hero-radiant h1 {
   font-size: 5em;
   margin-top: 0;
@@ -71,6 +82,10 @@ body {
 .content {
   margin-top: 10px;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .content-red {
@@ -110,3 +125,7 @@ a {
 .title-red {
   color: rgb(190,30,45);
 }  
+
+.p-padding {
+    padding: 10px;
+}

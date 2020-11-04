@@ -72,24 +72,7 @@ After this is done use rebar3 to generate a new project with Nova.
               <p>Powerful views that utilizes django templates.</p>
           </div>
         </div>
-      </div>
-     
-    </section>
-    <section class="hero-inner-white">
-      <div class="container">
         <div class="row">
-          <div
-            class="shadow p-3 mb-5  bg-card rounded col"
-            style="width: 36rem;"
-          >
-            <div class="container">
-              <h4 class="title-red"><i class="fab fa-erlang"></i> Erlang/OTP</h4>
-              <p>
-                Runs on a well tested Erlang VM (BEAM) that has been proven up
-                to five nines availability.
-              </p>
-            </div>
-          </div>
           <div
             class="shadow p-3 mb-5 bg-card rounded col"
             style="width: 36rem"
@@ -113,6 +96,7 @@ After this is done use rebar3 to generate a new project with Nova.
           </div>
          </div>
       </div>
+     
     </section>
-
+    
 {% include "views/footer.dtl" %}

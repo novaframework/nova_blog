@@ -1,0 +1,16 @@
+[
+ {kernel, [{logger_level, debug}]},
+ {nova,
+  [{cowboy_configuration, #{port => 8081}},
+   {dev_mode,true},
+   {bootstrap_application, nova_blog},
+   {plugins, []}
+  ]},
+  
+ {nova_blog, [{postgres_config, #{host => "localhost",
+                                  username => "postgres",
+                                  password => "root",
+                                  database => "nova_blog",
+                                  port => 5555}}
+             ]}
+].

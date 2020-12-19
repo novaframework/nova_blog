@@ -54,7 +54,7 @@ body {
 /* The navigation bar */
 .navbar {
   overflow: hidden;
-  background-color: #fff; /* rgb(233, 232, 238);*/
+  background-color: rgb(190,30,45); /* rgb(233, 232, 238);*/
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -66,7 +66,7 @@ body {
 .navbar a {
   float: right;
   display: block;
-  color: rgb(190,30,45);
+  color: #fff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;

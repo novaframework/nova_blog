@@ -4,21 +4,8 @@
         <div class="row">
           <div class="col text-white">
             <div class="container">
-              <div
-                class="shadow p-3 mb-5 bg-card rounded col"
-                style="width: 36rem"  
-              >
-                <div>
-                  <img src="assets/images/1329_logo.svg"></img>
-                </div>
-                <div>
-                  <p class="title-red">
-                    Nova makes it simple to build a fault-tolerant and distributed
-                    web application. It takes ideas from different web frameworks
-                    and implements them with the functionality and stability that
-                    Erlang and BEAM offer.
-                  </p>
-                </div>
+              <div>
+                <img src="assets/images/1329_logo.svg"></img>
               </div>
             </div>
           </div>
@@ -69,36 +56,35 @@
               class="shadow p-3 mb-3  bg-card rounded col"
               style="width: 36rem;"
             >
-              <h4 class="title-red"><i class="fab fa-erlang"></i> Erlang/OTP</h4>
-              <p>
-                Runs on a well tested Erlang VM (BEAM) that has been proven up
-                to five nines availability.
-              </p>
-            </div>
-          </div>
-          <div class="col">
-            <div
-              class="shadow p-3 mb-3 bg-card rounded col"
-              style="width: 36rem"
-            >
-              <h4 class="title-red"><i class="fas fa-file-import"></i> Django Templates</h4>
-              <p>Powerful views that utilizes django templates.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div
-              class="shadow p-3 mb-3 bg-card rounded col"
-              style="width: 36rem;"
-            >
-              <div class="container">
+              <div>
+                  <h1> Welcome to Nova! </h1>
+                  <p>
+                    Nova makes it simple to build a fault-tolerant and distributed
+                    web application. It takes ideas from different web frameworks
+                    and implements them with the functionality and stability that
+                    Erlang and BEAM offer.
+                  </p>
+              </div>
+              <div>
+                <h4 class="title-red"><i class="fab fa-erlang"></i> Erlang/OTP</h4>
+                <p>
+                  Runs on a well tested Erlang VM (BEAM) that has been proven up
+                  to five nines availability.
+                </p>
+              </div>
+              <div>
+                <h4 class="title-red"><i class="fas fa-file-import"></i> Django Templates</h4>
+                <p>Powerful views that utilizes django templates.</p>
+              </div>
+              <div>
                 <h4 class="title-red"><i class="fab fa-github"></i> Open-source</h4>
                 <p>
                   We encourage people to get involved and contribute to the
                   project, and build web applications with this framework.
                 </p>
               </div>
+            </div>
+            
           </div>
         </div>
       </div>

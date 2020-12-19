@@ -129,3 +129,15 @@ a {
 .p-padding {
     padding: 10px;
 }
+
+a {
+  color: rgb(190,30,45);
+}
+
+.fab {
+  color: rgb(190,30,45);
+}
+
+.fas {
+  color: rgb(190,30,45);
+}

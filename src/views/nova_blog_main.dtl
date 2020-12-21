@@ -108,7 +108,7 @@
         </div>
         <div class="row">
             <div class="col-sm">
-                <h2 class="text-white">GitHub exampels</h2>
+                <h2 class="text-white">GitHub examples</h2>
                 {% for example in examples %}
                 <div class="card bg-light" style="margin-bottom: 10px;">
                     <div class="card-block">

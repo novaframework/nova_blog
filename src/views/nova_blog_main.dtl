@@ -1,93 +1,131 @@
 {% include "views/header.dtl" with page="start" %}
-    <section class="hero-inner-white">
-      <div class="container">
-        <div class="row">
-          <div class="col text-white">
-            <div class="container">
-              <div>
-                <img src="assets/images/1329_logo.svg"></img>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div
-              class="shadow p-3 mb-5 bg-card rounded col"
-             style="width: 36rem"
-            >
-              <h2>Quick start</h2>
 
-              <p>
-                Start by adding the rebar3 template for Nova. This can be done by running the installation script;
-              </p>
-              <div class="shadow p-3 mb-3 bg-dark">
-                <p class="bg-dark text-white">
-                  Via curl: <br><br>
+<section class="hero-inner-top">
+    <div class="container">
+        <img class="img-responsive" src="assets/images/1329_logo.svg"></img>
+    </div>
+  </section>
+  <section class="hero-inner">
+    <div class="container">
+        <h1 class="text-white"> Welcome to Nova! </h1>
 
-                  sh -c "$(curl -fsSL https://raw.githubusercontent.com/novaframework/nova/master/tools/install.sh)"
-                </p>
-              </div>
-              <div class="shadow p-3 mb-3 bg-dark">
-                <p class="text-white">
-              
-                  Via wget: <br><br>
-
-                  sh -c "$(wget -O- https://raw.githubusercontent.com/novaframework/nova/master/tools/install.sh)"
-                </p>
-              </div>
-              <p>
-                After this is done use rebar3 to generate a new project with Nova.
-              </p>
-              <div class="shadow p-3 mb-3 bg-dark">
-                <p class="text-white">
-                  rebar3 new nova my_first_nova
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>  
-      </div>
-     
-    </section>
-    <section class="hero-inner">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div
-              class="shadow p-3 mb-3  bg-card rounded col"
-              style="width: 36rem;"
-            >
-              <div>
-                  <h1> Welcome to Nova! </h1>
-                  <p>
-                    Nova makes it simple to build a fault-tolerant and distributed
-                    web application. It takes ideas from different web frameworks
-                    and implements them with the functionality and stability that
-                    Erlang and BEAM offer.
-                  </p>
-              </div>
-              <div>
-                <h4 class="title-red"><i class="fab fa-erlang"></i> Erlang/OTP</h4>
-                <p>
-                  Runs on a well tested Erlang VM (BEAM) that has been proven up
-                  to five nines availability.
-                </p>
-              </div>
-              <div>
-                <h4 class="title-red"><i class="fas fa-file-import"></i> Django Templates</h4>
-                <p>Powerful views that utilizes django templates.</p>
-              </div>
-              <div>
-                <h4 class="title-red"><i class="fab fa-github"></i> Open-source</h4>
-                <p>
-                  We encourage people to get involved and contribute to the
-                  project, and build web applications with this framework.
-                </p>
-              </div>
-            </div>
-            
-          </div>
+        <div>
+            <p class="text-white">
+                Nova makes it simple to build a fault-tolerant and distributed
+                web application. It takes ideas from different web frameworks
+                and implements them with the functionality and stability that
+                Erlang and BEAM offer.
+            </p>
         </div>
-      </div>
-    </section>
-    
+        <div class="row">
+            <div class="col-sm">
+                <div class="shadow p-3 mb-3 bg-light rounded" style="padding: 10px;">
+                    <div class="card-block">
+                        <div class="card-title">
+                            <h2>Built with</h2>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <p>
+                                    Nova makes it simple to build a fault-tolerant and distributed
+                                    web application. It takes ideas from different web frameworks
+                                    and implements them with the functionality and stability that
+                                    Erlang and BEAM offer.
+                                </p>
+                            </div>
+                            <div>
+                                <h4><i class="fab fa-erlang"></i> Erlang/OTP</h4>
+                                <p>
+                                    Runs on a well tested Erlang VM (BEAM) that has been proven up
+                                    to five nines availability.
+                                </p>
+                            </div>
+                            <div>
+                                <h4><i class="fas fa-file-import"></i> Django Templates</h4>
+                                <p>Powerful views that utilizes django templates.</p>
+                            </div>
+                            <div>
+                                <h4><i class="fab fa-github"></i> Open-source</h4>
+                                <p>
+                                    We encourage people to get involved and contribute to the
+                                    project, and build web applications with this framework.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="https://github.com/novaframework/nova"><button class="btn btn-outline-dark">Learn more</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="shadow-sm p-3 bg-light rounded" style="padding: 10px;">
+                    <div class="card-body">
+                        <h2>Quick start</h2>
+
+                        <p>
+                            Start by adding the rebar3 template for Nova. This can be done by running the installation script;
+                        </p>
+                        <div class="shadow p-3 mb-3 bg-dark">
+                            <div class="card-block">
+                                <div class="card-text">
+                                    <p class="bg-dark text-white">
+                                        Via curl: <br><br>
+
+                                        sh -c "$(curl -fsSL https://raw.githubusercontent.com/novaframework/nova/master/tools/install.sh)"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shadow p-3 mb-3 bg-dark">
+                            <div class="card-block">
+                                <div class="card-text">
+                                    <p class="text-white">
+
+                                        Via wget: <br><br>
+
+                                        sh -c "$(wget -O- https://raw.githubusercontent.com/novaframework/nova/master/tools/install.sh)"
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            After this is done use rebar3 to generate a new project with Nova.
+                        </p>
+                        <div class="shadow p-3 mb-3 bg-dark">
+                            <div class="card-block">
+                                <div class="card-text">
+                                    <p class="text-white">
+                                        rebar3 new nova my_first_nova
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="margin-top: 10px;">
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h2 class="text-white">GitHub exampels</h2>
+                {% for example in examples %}
+                <div class="card bg-light" style="margin-bottom: 10px;">
+                    <div class="card-block">
+                        <div class="card-title">
+                            <h3>{{example.title}}</h3>
+                        </div>
+                        <div class="card-text">
+                            <p>{{example.text}}</p>
+                            <a href="{{example.url}}">{{example.url}}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <hr style="margin-top: 10px;">
+        </div>
+  </section>
+
+
 {% include "views/footer.dtl" %}

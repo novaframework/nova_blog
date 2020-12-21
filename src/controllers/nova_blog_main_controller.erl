@@ -6,16 +6,8 @@
         ]).
 
 index(#{req := #{method := <<"GET">>}}) ->
-    LastRelease =
-        case nova_blog_db:get_latest_release() of
-            {ok, [Entry|_]} -> Entry;
-            _ ->
-                #{version => "0.0.0",
-                  description => "no description",
-                  added => calendar:local_time()}
-        end,
-    {ok, LatestNews} = nova_blog_db:get_entries(4),
-    {ok, [{last_release, LastRelease}, {latest_news, LatestNews}]}.
+    {ok, Examples} = nova_blog_db:get_examples(),
+    {ok, [{examples, Examples}]}.
 
 
 not_found(_Req) ->

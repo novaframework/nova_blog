@@ -1,54 +1,61 @@
-    <section class="hero-inner-white">
-      <div class="container">
+<section class="hero-inner-white">
+    <div class="container">
         <div class="row">
-          <div
-            class="shadow p-3 mb-5 bg-card rounded col-sm"
-            style="width: 36rem"
-          >
-            <div class="container">
-              <h4>Communitiy</h4>
-              <p>
-                Nova framework is an open source project. Fork us and contribute
-                today! For support you can find us in the #nova Slack channel,
-                or on Twitter.
-              </p>
-              <div>
-                <a
-                  href="https://twitter.com/intent/tweet?screen_name=FrameworkNova&ref_src=twsrc%5Etfw"
-                  ><i
-                    id="social-tw"
-                    class="fab fa-twitter-square fa-3x social"
-                  ></i
-                ></a>
-                <a href="https://github.com/novaframework/nova"
-                  ><i
-                    id="social-gh"
-                    class="fab fa-github-square fa-3x social"
-                  ></i
-                ></a>
-                <a href="https://erlef.org/slack-invite/erlanger"
-                  ><i id="social-slack" class="fab fa-slack fa-3x social"></i
-                ></a>
-                <a href="mailto:info@novaframework.org"
-                  ><i
-                    id="social-em"
-                    class="fas fa-envelope-square fa-3x social"
-                  ></i
-                ></a>
-              </div>
+            <div class="col-sm">
+                <div class="shadow p-3 mb-3 rounded bg-light" style="padding: 10px">
+                    <div class="card-block">
+                        <div class="card-title">
+                            <h2>Community</h2>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <p>
+                                    Nova framework is an open source project. Fork us and contribute
+                                    today! For support you can find us in the #nova Slack channel,
+                                    or on Twitter.
+                                </p>
+                            </div>
+                            <div>
+                                <a
+                                  href="https://twitter.com/intent/tweet?screen_name=FrameworkNova&ref_src=twsrc%5Etfw"
+                                  ><i
+                                    id="social-tw"
+                                    class="fab fa-twitter-square fa-3x social"
+                                  ></i
+                                ></a>
+                                <a href="https://github.com/novaframework/nova"
+                                  ><i
+                                    id="social-gh"
+                                    class="fab fa-github-square fa-3x social"
+                                  ></i
+                                ></a>
+                                <a href="https://erlef.org/slack-invite/erlanger"
+                                  ><i id="social-slack" class="fab fa-slack fa-3x social"></i
+                                ></a>
+                                <a href="mailto:info@novaframework.org"><i id="social-em" class="fas fa-envelope-square fa-3x social"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div
-            class="shadow p-3 mb-5 bg-card rounded col-sm"
-            style="width: 36rem; margin-left: 10px"
-          >
-            <h4>Consulting</h4>
-            <p>Companies that can help building your Nova applications.</p>
-            <a href="http://www.burbasconsulting.com/">Burbas Solution</a><br />
-            <a href="http://widgrensit.com/">Widgrens IT</a>
-          </div>
+            <div class="col-sm">
+                <div class="shadow p-3 mb-2 rounded bg-light">
+                    <div class="card-block">
+                        <div class="card-title">
+                            <h2>Nova consulting</h2>
+                        </div>
+                        <div class="card-text">
+                            <div>
+                                <p>Companies that can help building your Nova applications.</p>
+                                <a href="http://www.burbasconsulting.com/">Burbas Solution</a><br />
+                                <a href="http://widgrensit.com/">Widgrens IT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
 </html>

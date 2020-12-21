@@ -1,0 +1,131 @@
+:root {
+  --main-bg-color: #28536b;
+  --main-text-color: #a4a9ad;
+}
+
+body {
+  margin: 0;
+  font-family: Rockwell;
+  padding-top: 56px;
+}
+
+.hero-inner {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--main-bg-color); /* rgb(190, 30, 45); */
+}
+
+.hero-inner-top {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 30vh;
+  background-image: url(../images/wave.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero-inner-white {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  height: 30vh;
+  background-image: url(../images/bottom-wave.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--main-bg-color); /*rgb(190, 30, 45); */
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  z-index: 1;
+}
+
+nav .navbar-nav li a {
+  color: #fff !important;
+  font-weight: bold;
+}
+.content {
+  margin-top: 10px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-red {
+  margin-top: 10px;
+  background-color: var(--main-bg-color); /* rgb(190, 30, 45); */
+}
+
+main {
+  margin-top: 10px;
+  color: black;
+}
+
+.bg-card {
+  background-color: rgb(233, 232, 238);
+}
+
+a {
+  color: #1c75bc;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  margin-top: 15px; /* if you want it vertically middle of the navbar. */
+}
+
+.img-responsive {
+  height: auto;
+  width: auto;
+  max-height: 680px;
+  max-width: 940px;
+}
+.title-red {
+  color: var(--main-text-color);
+}
+
+.text-white {
+  color: #fff;
+}
+.p-padding {
+  padding: 10px;
+}
+
+a .fab .fas {
+  color: var(--main-bg-color);
+}
+
+.fab {
+  color: var(--main-bg-color);
+}
+
+.fas {
+  color: var(--main-bg-color);
+}
+
+.card {
+  max-width: 100%;
+}
+.card-text {
+  word-wrap: break-word;
+}

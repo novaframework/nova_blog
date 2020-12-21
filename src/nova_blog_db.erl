@@ -23,6 +23,7 @@
          get_latest_release/0,
          get_releases/0,
          get_release/1,
+         get_examples/0,
          new_release/3
         ]).
 
@@ -95,6 +96,9 @@ get_releases() ->
 get_release(Version) ->
     gen_server:call(?SERVER, {get_release, Version}).
 
+get_examples() ->
+    gen_server:call(?SERVER, get_examples).
+    
 new_release(Version, Changes, AuthorId) ->
     gen_server:cast(?SERVER, {new_release, Version, Changes, AuthorId}).
 
@@ -245,6 +249,14 @@ handle_call({get_forum_threads}, _From, State = #state{connection = Conn}) ->
            <<"WHERE ">>,
            <<"  parent = '' ">>,
            <<"LIMIT 0, 50">>],
+    {ok, Columns, Rows} = epgsql:equery(Conn, SQL, []),
+    Result = rows_to_map(Columns, Rows),
+    {reply, {ok, Result}, State};
+handle_call(get_examples, _From, State = #state{connection = Conn}) ->
+    SQL = [<<"SELECT ">>,
+           <<"  *  ">>,
+           <<"FROM ">>,
+           <<"  nova_blog_example">>],
     {ok, Columns, Rows} = epgsql:equery(Conn, SQL, []),
     Result = rows_to_map(Columns, Rows),
     {reply, {ok, Result}, State};

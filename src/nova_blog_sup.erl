@@ -35,7 +35,7 @@ init([]) ->
                     restart => permanent,
                     shutdown => brutal_kill,
                     type => worker,
-                    modules => [X]} || X <- [nova_blog_db]
+                    modules => [X]} || X <- []
                  ],
     {ok, { {one_for_all, 0, 1}, ChildSpecs} }.
 

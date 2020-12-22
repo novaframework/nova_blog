@@ -8,8 +8,7 @@
    [kernel,
     stdlib,
     nova,
-    mnesia,
-    epgsql
+    pgo
    ]},
   {env,[]},
   {modules, []},
